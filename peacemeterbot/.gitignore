@@ -1,0 +1,56 @@
+# =========================
+# DEPENDENCIES
+# =========================
+node_modules
+
+# =========================
+# NEXT.JS
+# =========================
+.next
+out
+build
+
+# =========================
+# ENV FILES (IMPORTANT)
+# =========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
+# LOGS
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# VERCEL
+# =========================
+.vercel
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# TYPESCRIPT
+# =========================
+*.tsbuildinfo
+next-env.d.ts
+
+# =========================
+# OPTIONAL (YARN PNP IF NOT USED)
+# =========================
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
