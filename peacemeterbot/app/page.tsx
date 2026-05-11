@@ -48,25 +48,29 @@ export default function Home() {
     loadNews();
   }, []);
 
-  async function loadProbabilities() {
-    const { data: probs } = await supabase
-      .from("probabilities")
-      .select("*");
+async function loadProbabilities() {
+  const response = await supabase
+    .from("probabilities")
+    .select("*");
 
-    if (!probs) return;
+  console.log("SUPABASE RESPONSE:", response);
 
-    const formatted: Probabilities = {
-      month: 0,
-      six: 0,
-      year: 0,
-    };
+  const probs = response.data;
 
-    probs.forEach((item) => {
-      formatted[item.id as keyof Probabilities] = item.value;
-    });
+  if (!probs) return;
 
-    setData(formatted);
-  }
+  const formatted: Probabilities = {
+    month: 0,
+    six: 0,
+    year: 0,
+  };
+
+  probs.forEach((item) => {
+    formatted[item.id as keyof Probabilities] = item.value;
+  });
+
+  setData(formatted);
+}
 
   async function loadNews() {
     const { data: newsData } = await supabase
