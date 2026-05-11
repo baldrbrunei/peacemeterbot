@@ -295,5 +295,12 @@ bot.start((ctx) => {
 // =========================
 // RUN BOT
 // =========================
-bot.launch();
-console.log("Bot running...");
+const PORT = process.env.PORT || 3000;
+
+bot.telegram.setWebhook(
+  "https://peacemeterbot.onrender.com"
+);
+
+bot.startWebhook("/bot", null, PORT);
+
+console.log("Webhook bot running");
