@@ -298,7 +298,7 @@ bot.start((ctx) => {
 const PORT = process.env.PORT || 3000;
 
 bot.telegram.setWebhook(
-  "https://peacemeterbot.onrender.com"
+  "https://peacemeterbot.onrender.com/bot"
 );
 
 bot.startWebhook("/bot", null, PORT);
